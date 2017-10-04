@@ -1,6 +1,8 @@
 # master
 *Please put new entries at the top.
 
+1. ReactiveCocoa is now compatible with the Swift 4.0 language mode, in addition to the Swift 3.2 compatibility mode. (#3526, kudos to @andersio)
+
 # 6.1.0-alpha.2
 # 6.1.0-alpha.1
 1. Added `cancelButtonClicked` signal to `UISearchBar`.
