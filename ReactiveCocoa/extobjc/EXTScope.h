@@ -88,7 +88,10 @@
     _Pragma("clang diagnostic pop")
 
 /*** implementation details follow ***/
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wstrict-prototypes"
 typedef void (^rac_cleanupBlock_t)();
+#pragma clang diagnostic pop
 
 static inline void rac_executeCleanupBlock (__strong rac_cleanupBlock_t *block) {
     (*block)();
