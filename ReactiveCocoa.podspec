@@ -32,29 +32,6 @@ Pod::Spec.new do |s|
   s.source_files          = "ReactiveCocoa/*.{h,m,d}",
                             "ReactiveCocoa/extobjc/*.{h,m}"
 
-  s.private_header_files  = "**/*Private.h",
-                            "**/*EXTRuntimeExtensions.h",
-                            "**/RACEmpty*.h"
-
-  s.ios.exclude_files     = "ReactiveCocoa/**/*{AppKit,NSControl,NSText,NSTable}*"
-
-  s.osx.exclude_files     = "ReactiveCocoa/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,"\
-                            "UIButton,UICollectionReusableView,UIControl,UIDatePicker,"\
-                            "UIGestureRecognizer,UIImagePicker,UIRefreshControl,"\
-                            "UISegmentedControl,UISlider,UIStepper,UISwitch,UITableViewCell,"\
-                            "UITableViewHeaderFooterView,UIText,MK}*"
-
-  s.tvos.exclude_files    = "ReactiveCocoa/**/*{AppKit,NSControl,NSText,NSTable,UIActionSheet,"\
-                            "UIAlertView,UIDatePicker,UIImagePicker,UIRefreshControl,UISlider,"\
-                            "UIStepper,UISwitch,MK}*"
-
-  s.watchos.exclude_files = "ReactiveCocoa/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,"\
-                            "UIButton,UICollectionReusableView,UIControl,UIDatePicker,"\
-                            "UIGestureRecognizer,UIImagePicker,UIRefreshControl,"\
-                            "UISegmentedControl,UISlider,UIStepper,UISwitch,UITableViewCell,"\
-                            "UITableViewHeaderFooterView,UIText,MK,AppKit,NSControl,NSText,"\
-                            "NSTable,NSURLConnection}*"
-
   s.requires_arc = true
 
   s.frameworks   = "Foundation"
