@@ -55,4 +55,15 @@ Pod::Spec.new do |s|
 
   s.frameworks   = "Foundation"
 
+  s.prepare_command = <<-'CMD'.strip_heredoc
+                        find -E . -type f -not -name 'RAC*' -regex '.*(EXT.*|metamacros)\.[hm]$' \
+                                  -execdir mv '{}' RAC'{}' \;
+                        find . -regex '.*\.[hm]' \
+                               -exec perl -pi \
+                                          -e 's@"(?:(?!RAC)(EXT.*|metamacros))\.h"@"RAC\1.h"@' '{}' \;
+                        find . -regex '.*\.[hm]' \
+                               -exec perl -pi \
+                                          -e 's@<ReactiveCocoa/(?:(?!RAC)(EXT.*))\.h>@<ReactiveCocoa/RAC\1.h>@' '{}' \;
+                      CMD
+
 end
